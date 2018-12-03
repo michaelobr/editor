@@ -1,8 +1,37 @@
 import nltk
+import os 
 
-f = open("textholder.txt")
-text = f.read()
+# Clear the screen
+os.system("cls")
+
+# Open the .txt file holding the text that will be edited and save it in before_text
+f = open("before.txt", "r")
+before_text = f.read()
 f.close()
-sentences = nltk.sent_tokenize(text)
+
+# Parse the sentences using nltk
+sentences = nltk.sent_tokenize(before_text)
+
+#Create an array to hold the editor's updates
+after_text = []
+
+# Loop through each sentence from before_text and have the editor input any revision, or they can simply enter skip to keep the sentnece as is
 for i in sentences:
-    print(i, end=" ")
+    print(i + "\n")
+    editor_input = input("")
+    if editor_input != "skip":
+        after_text.append(editor_input)
+    os.system("cls")
+
+# Print the before and after versions
+os.system("cls")
+str_formating = ""
+for i in after_text:
+    str_formating = str_formating + i + " "
+after_text = str_formating
+print(before_text + "\n\n" + after_text)
+
+# Write the after_text to the after.txt file
+f = open("after.txt", "w")
+f.write(after_text)
+f.close()    
