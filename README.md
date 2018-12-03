@@ -13,3 +13,10 @@ This is a small little program to help facilitate the editing of short writing s
 1) Utilize with(open("filename", "filemode")) instead of var = open("filename", "filemode")
 2) Find a better way to format the after_text for printing the final result
 3) Instead of having the editor type skip, just let them press enter (no text needed to be entered)
+
+# Important notes
+This program performs tokenization utilizing the nltk module. To get the nltk module, simply run `pip install nltk` inside of command line. To setup tokenization, run the following inside python.
+```
+import nltk
+nltk.download("punkt") 
+```
