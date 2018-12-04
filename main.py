@@ -5,9 +5,8 @@ import os
 os.system("cls")
 
 # Open the .txt file holding the text that will be edited and save it in before_text
-f = open("before.txt", "r")
-before_text = f.read()
-f.close()
+with open("before.txt", "r") as f:
+    before_text = f.read()
 
 # Parse the sentences using nltk
 sentences = nltk.sent_tokenize(before_text)
@@ -32,6 +31,5 @@ after_text = str_formating
 print(before_text + "\n\n" + after_text)
 
 # Write the after_text to the after.txt file
-f = open("after.txt", "w")
-f.write(after_text)
-f.close()    
+with open("after.txt", "w") as f:
+    f.write(after_text)
