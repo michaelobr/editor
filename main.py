@@ -18,8 +18,10 @@ after_text = []
 for i in sentences:
     print(i + "\n")
     editor_input = input("")
-    if editor_input != "skip":
+    if editor_input != "":
         after_text.append(editor_input)
+    else:
+        after_text.append(i)
     os.system("cls")
 
 # Print the before and after versions
